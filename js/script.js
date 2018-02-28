@@ -72,3 +72,24 @@ function init(){
 }
 
 init();
+
+
+/* PARTIE ANIMATION FLIP CARD ACCUEIL*/
+var tournerFront1 = document.querySelector('#tournerFront1');
+var carte1 = document.querySelector('.card1');
+var tournerBack1 = document.querySelector('#tournerBack1');
+
+console.log(carte1);
+
+var rotate = function(el) {
+  return function() {
+ 		if(el.style.transform == 'rotateY(-180deg)') {
+    	el.style.transform = 'rotateY(0)';
+    } else {
+      el.style.transform = 'rotateY(-180deg)';
+    }
+  };
+}
+
+tournerFront1.onclick = rotate(carte1);
+tournerBack1.onclick = rotate(carte1);

@@ -42,7 +42,7 @@ body{
 .menu{
     text-decoration: none;
     margin:0 15px;
-    font-size: 28px;
+    font-size: 32px;
     font-family: 'Crimson Text', serif;
     color: rgba(0, 0, 0, 0.9);
     font-weight: 700;
@@ -107,21 +107,55 @@ body{
   min-width: 100%;
 }
 
+.scroll-indicator{
+position: absolute;
+left: 49.5%;
+bottom: 10%;
+color: rgba(242, 242, 242, 0.8);
+animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+0%{ top: 91% }
+50%{ top: 94%}
+100%{ top: 91%}
+}
+
 .cardSet{
   position: relative;
   height: 800px;
   width: 100%;
   display: flex;
   justify-content: space-around;
+  perspective: 1500px;
 }
 
 .card{
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     height: 400px;
     width: 300px;
     background-color: #2980b9;
     margin-top: 200px;
     border-radius: 5px;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+}
+
+.front, .back{
+  backface-visibility: hidden;
+}
+
+.front{
+  z-index: 20;
+  transform: rotateY(0deg);
+  display: flex;
+}
+
+.back{
+  transform: rotateY( -180deg );
 }
 
 /*PARTIE2   ---LES SIBERIENS*/
