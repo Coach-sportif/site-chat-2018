@@ -6,7 +6,6 @@ var bar = document.querySelector('.bar');
 var actif = document.querySelector('.actif');
 var ensemble = document.querySelector('.ensemble');
 
-
 // -fonction init
 //-enlever et rajouter la classe actif
 //-rajouter un ev onclick sur les items du menu
@@ -19,8 +18,8 @@ var sectionCopy;
 var sectionCopy2;
 var peutClick = true;
 
-function gestion(){
-  if(this === actif || peutClick === false) return;
+function gestion() {
+  if (this === actif || peutClick === false) return;
   peutClick = false;
   actif.classList.remove('actif');
   this.classList.add('actif');
@@ -35,10 +34,10 @@ function gestion(){
   var sectionActuel = document.querySelectorAll('.section');
   ensemble.insertBefore(sectionActif, sectionActuel[1]);
   window.setTimeout(() => {
-    sectionActif.classList.add('deplacementSection')
+    sectionActif.classList.add('deplacementSection');
   }, 10);
   sectionCopy = sectionActuel[0];
-  window.setTimeout( () => {
+  window.setTimeout(() => {
     ensemble.removeChild(sectionActuel[0]);
     ensemble.appendChild(sectionCopy);
     sectionActif.classList.remove('deplacementSection');
@@ -46,23 +45,22 @@ function gestion(){
   }, 600);
 }
 
-function click(){
-  for(var i = 0; i < menu.length; i++){
+function click() {
+  for (var i = 0; i < menu.length; i++) {
     menu[i].addEventListener('click', gestion);
   }
 }
 
-function lancement(){
+function lancement() {
   var largeur = actif.offsetWidth;
   var position = actif.offsetLeft;
-  bar.style.transform =
-   `translate3d(${position}px, 0, 0)`;
+  bar.style.transform = `translate3d(${position}px, 0, 0)`;
   bar.style.width = `${largeur}px`;
 }
 
 var time;
 
-function init(){
+function init() {
   click();
   lancement();
   window.addEventListener('resize', () => {
@@ -73,23 +71,22 @@ function init(){
 
 init();
 
-
 /* PARTIE ANIMATION FLIP CARD ACCUEIL*/
-var tournerFront1 = document.querySelector('#tournerFront1');
-var carte1 = document.querySelector('.card1');
-var tournerBack1 = document.querySelector('#tournerBack1');
+const lesBoutonsDesCartes = document.querySelectorAll(
+  '.front__btn, .back__btn',
+);
 
-console.log(carte1);
+function tourneLaCarteDansLeBonSens() {
+  const numDeLaCarte = this.dataset.carte;
+  const carteARetourner = document.querySelector(`.card-${numDeLaCarte}`);
 
-var rotate = function(el) {
-  return function() {
- 		if(el.style.transform == 'rotateY(-180deg)') {
-    	el.style.transform = 'rotateY(0)';
-    } else {
-      el.style.transform = 'rotateY(-180deg)';
-    }
-  };
+  if (carteARetourner.classList.contains('card--rotate')) {
+    carteARetourner.classList.remove('card--rotate');
+  } else {
+    carteARetourner.classList.add('card--rotate');
+  }
 }
 
-tournerFront1.onclick = rotate(carte1);
-tournerBack1.onclick = rotate(carte1);
+lesBoutonsDesCartes.forEach(boutton => {
+  boutton.addEventListener('click', tourneLaCarteDansLeBonSens);
+});
