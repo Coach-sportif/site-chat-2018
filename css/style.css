@@ -135,19 +135,19 @@ body {
 /*******************************************/
 
 .cards__bg {
-  background: #051e37;
+  background: rgba(0, 102, 255, 0.8);
+  /* height: 100vh; */
 }
 
 /* LE CONTAINER DES CARTES (PARENT) */
 .cards {
   position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 50px 20px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-column-gap: 50px;
   perspective: 1500px;
   font-family: 'Crimson Text';
 }
@@ -155,12 +155,9 @@ body {
 /* LES CARTE SOLO */
 .card {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  margin: 20px 0;
+  width: 300px;
+  height: 400px;
   transform-style: preserve-3d;
-  padding: 50px;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -170,19 +167,17 @@ body {
 .front,
 .back {
   backface-visibility: hidden;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
+  height: 100%;
 }
 
 /* LA CLASSE QU'ON APPLIQUE/RETIRE QUAND ON CLIQUE SUR LE BTN */
 .card--rotate {
-  transform: rotateY(180deg);
+  transform: rotateY(-180deg);
 }
 
 /* --- FRONT OF THE CARD --- */
 .front {
   transform: rotateY(0deg);
-  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -211,20 +206,11 @@ body {
   font-size: 16px;
 }
 
-.front__btn > svg {
-  transition: transform 300ms ease-in-out;
-}
-
-.front__btn:hover > svg:first-of-type {
-  transform: translate3d(5px, 0, 0);
-}
-
-.front__btn:hover > svg:last-of-type {
-  transform: translate3d(-5px, 0, 0);
-}
-
 /* --- BACK OF THE CARD --- */
 .back {
+  position: absolute;
+  top:0;
+  left: 0;
   transform: rotateY(-180deg);
   display: flex;
   flex-direction: column;

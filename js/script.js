@@ -5,6 +5,9 @@ var menu = document.querySelectorAll('.menu');
 var bar = document.querySelector('.bar');
 var actif = document.querySelector('.actif');
 var ensemble = document.querySelector('.ensemble');
+var hauteurHeader = document.querySelector('.header').offsetHeight;
+var cardsBackground = document.querySelector('.cards__bg');
+var hauteurEnsemble = document.querySelector('.ensemble').offsetHeight;
 
 // -fonction init
 //-enlever et rajouter la classe actif
@@ -56,6 +59,8 @@ function lancement() {
   var position = actif.offsetLeft;
   bar.style.transform = `translate3d(${position}px, 0, 0)`;
   bar.style.width = `${largeur}px`;
+
+    cardsBackground.style.height = `calc(100vh - ${hauteurHeader}px)`;
 }
 
 var time;
