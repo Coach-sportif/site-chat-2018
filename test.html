@@ -1,49 +1,162 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <title>Des beautés félines</title>
-    <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
-    <script src="https://use.fontawesome.com/8d1b6f46e3.js"></script>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <header class="header">
-      <nav class="nav_menu" role="navigation">
-        <div class="items">
-          <a class="menu items1 actif" href="#" data-i="0">accueil</a>
-              <a class="menu items2" href="#" data-i="1">Les sibériens</a>
-              <a class="menu items3" href="#" data-i="2">Les norvégiens</a>
-              <a class="menu items4" href="#" data-i="3">expositions</a>
-        </div>
-        <div class="bar"></div>
-      </nav>
-    </header>
-    <main class="ensemble">
-      <section class="section partie1">
-        <div class="imageAccueil">
-          <img class="imageBackground" src="./image/background.jpg" alt="background">
-          <span class="scroll-indicator fa fa-chevron-down fa-3x"></span>
-        </div>
-        <div class="cardSet">
-          <div class="card card1">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Des beautés félines</title>
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="nav_menu" role="navigation">
+      <div class="items">
+        <a class="menu items1 actif" href="#" data-i="0">accueil</a>
+        <a class="menu items2" href="#" data-i="1">Les sibériens</a>
+        <a class="menu items3" href="#" data-i="2">Les norvégiens</a>
+        <a class="menu items4" href="#" data-i="3">expositions</a>
+      </div>
+      <div class="bar"></div>
+    </nav>
+  </header>
+  <main class="ensemble">
+    <section class="section partie1">
+      <div class="imageAccueil">
+        <img class="imageBackground" src="./image/background.jpg" alt="background">
+        <span class="scroll-indicator fa fa-chevron-down fa-3x"></span>
+      </div>
+
+      <div class="cards__bg">
+        <div class="cards">
+          <article class="card card-1">
+            <!-- FRONT -->
             <div class="front">
-              <button class="rectangle" id="tournerFront1">test</button>
-            </div>
-            <div class="back">
-              <button class="faBack" id="tournerBack1">
-                <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+              <span class="fas fa-list fa-5x"></span>
+
+              <h2 class="front__text">Conditions de vente</h2>
+
+              <button class="front__btn" data-carte="1">
+                <i class="fas fa-arrow-right"></i>
+                <span>Plus d'informations</span>
+                <i class="fas fa-arrow-left"></i>
               </button>
             </div>
-          </div>
-          <div class="card card2"></div>
-          <div class="card card3"></div>
+
+            <!-- BACK -->
+            <div class="back">
+              <button class="back__btn" data-carte="1">
+                <i class="fas fa-arrow-left fa-2x"></i>
+              </button>
+
+              <ul class="back__list">
+                <li>
+                  <span>Chat de race garantie</span>
+                  <i class="fas fa-check"></i>
+                </li>
+                <li>
+                  <span>Inscrit au LOOF</span>
+                  <i class="fas fa-check"></i>
+                </li>
+                <li>
+                  <span>Vacination à jour</span>
+                  <i class="fas fa-check"></i>
+                </li>
+                <li>
+                  <span>Attestation de vente</span>
+                  <i class="fas fa-check"></i>
+                </li>
+              </ul>
+
+              <footer class="back__footer">
+                <p>Retrouvez toutes les conditions de vente
+                  <a href="#0">ici</a>
+                </p>
+              </footer>
+            </div>
+          </article>
+
+          <article class="card card-2">
+            <!-- FRONT -->
+            <div class="front">
+              <span class="fas fa-file-alt fa-5x"></span>
+
+              <h2 class="front__text">Questionnaire</h2>
+
+              <button class="front__btn" data-carte="2">
+                <i class="fas fa-arrow-right"></i>
+                <span>Plus d'informations</span>
+                <i class="fas fa-arrow-left"></i>
+              </button>
+            </div>
+
+            <!-- BACK -->
+            <div class="back">
+              <button class="back__btn" data-carte="2">
+                <i class="fas fa-arrow-left fa-2x"></i>
+              </button>
+
+              <h2>Etes vous prêt à avoir un chat?</h2>
+
+              <p class="back__paragraph">Vous envisagez de prendre un chat chez vous? Un chat n'est pas une peluche et demande de l'attention. Certes,
+                c'est un animal indépendant mais le nourrir, le soigner et changer sa litière sont indispensable à son bien
+                être.
+              </p>
+
+              <footer class="back__footer">
+                <p>Lancer le questionnaire
+                  <a href="#0">ici</a>
+                </p>
+              </footer>
+            </div>
+          </article>
+
+          <article class="card card-3">
+            <!-- FRONT -->
+            <div class="front">
+              <span class="fas fa-phone fa-5x"></span>
+
+              <h2 class="front__text">Nous contacter</h2>
+
+              <button class="front__btn" data-carte="3">
+                <i class="fas fa-arrow-right"></i>
+                <span>Plus d'informations</span>
+                <i class="fas fa-arrow-left"></i>
+              </button>
+            </div>
+
+            <!-- BACK -->
+            <div class="back">
+              <button class="back__btn" data-carte="3">
+                <i class="fas fa-arrow-left fa-2x"></i>
+              </button>
+
+              <div class="back__row">
+                <i class="fas fa-phone fa-2x"></i>
+                <p>(+33)6 bala bla bla</p>
+              </div>
+
+              <div class="back__row">
+                <i class="fas fa-envelope fa-2x"></i>
+                <p>desbeautesfelines@orange.fr</p>
+              </div>
+
+              <div class="back__row">
+                <i class="fas fa-edit fa-2x"></i>
+                <a href="#0">Formulaire</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </section>
-      <section class="section partie2"></section>
-      <section class="section partie3"></section>
-      <section class="section partie4"></section>
-    </main>
-    <script src="./js/script.js"></script>
-  </body>
+      </div>
+
+    </section>
+    <section class="section partie2"></section>
+    <section class="section partie3"></section>
+    <section class="section partie4"></section>
+  </main>
+  <script src="./js/script.js"></script>
+</body>
+
 </html>
