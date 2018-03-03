@@ -181,24 +181,27 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   z-index: 20;
 }
 
 .front__text {
-  font-size: 24px;
-  margin: 50px 0;
+  font-size: 28px;
+  margin: 40px 0;
 }
 
 .front__btn {
-  border: 1px solid black;
-  background: linear-gradient(to bottom, #f7fbfc 0%, #d9edf2 40%, #add9e4 100%);
-  border-radius: 50px;
-  box-shadow: 1px 1px 4px 1px #656565;
+  border: 1px solid #111;
+  border-radius: 5px;
   font-weight: 700;
   display: flex;
   align-items: center;
   padding: 10px;
   cursor: pointer;
+}
+
+.front__btn:hover{
+  background-color: #C3C3C3;
 }
 
 .front__btn > span {
@@ -246,6 +249,7 @@ body {
 .back__paragraph {
   font-size: 20px;
   margin: 20px 0;
+  text-align: center;
 }
 
 .back__row {
@@ -277,16 +281,121 @@ body {
   text-decoration: none;
 }
 
+.back3{
+  width: 100%;
+}
+
+.centerH2{
+  text-align: center;
+}
+
 /*PARTIE2   ---LES SIBERIENS*/
 
 .partie2 {
-  background-color: blue;
+  background-color: #00b8e6;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+}
+
+.info {
+  position: absolute;
+  background-color: #fff;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 400ms ease; /* Modifie le temps d'animation de la carte info */
+}
+
+.info1{
+transform: translate(-100%, -100%);
+}
+
+.info2{
+transform: translate(0%, -100%);
+}
+
+.info3{
+transform: translate(100%, -100%);
+}
+
+.active {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.close {
+  position: absolute;
+  top: 160px;
+  right: 0;
+  color: white;
+  cursor: pointer;
+  border-width: 0;
+  background-color: red;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 20px;
+}
+
+.close:focus {
+  outline-width: 0;
+}
+
+.carteChat{
+width: 400px;
+height: 400px;
+border: 1px solid black;
+border-radius: 50%;
+background-color: #FFF;
+transition: all 300ms;
+}
+
+.frontCarteChat{
+text-align: center;
+}
+
+.frontCarteChat{
+position: relative;
+width: 100%;
+margin-top: 150px;
+}
+
+.frontCarteChat h1{
+font-size: 35px;
+}
+
+.buttonChats{
+text-decoration: none;
+cursor: pointer;
+height: 30px;
+width: auto;
+font-size: 15px;
+font-weight: 600;
+border-radius: 4px;
+background-color: rgba(255, 89, 0, 0.8);
+box-shadow: 0px 2px 0px 0px #CD6509;
+color: #FFF;
+}
+
+.buttonChats:hover{
+background-color: rgba(220, 89, 0, 0.6);
 }
 
 /*PARTIE3   ---LES NORVEGIENS*/
 
 .partie3 {
-  background-color: orange;
+  background-color: #ff8080;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
 }
 
 /*PARTIE4   ---EXPOSITION*/
