@@ -132,5 +132,7 @@ for(k = 0; k < close.length; k++) {
   }
 }
 
-// close.style.top = `calc(${hauteurHeader}px + 20px)`;
-//VOIR AVEC DEXTER COMME RAJOUTER UNE PROPRIETE DANS LE CSS ET PAS DANS UN ELEMENT HTML
+//PARTIE 4
+var resultatPartie3 = document.querySelector('.resultatPartie3');
+
+resultatPartie3.style.marginTop = `${hauteurHeader}px`;
