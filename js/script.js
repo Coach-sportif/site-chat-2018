@@ -8,6 +8,8 @@ var ensemble = document.querySelector('.ensemble');
 var hauteurHeader = document.querySelector('.header').offsetHeight;
 var cardsBackground = document.querySelector('.cards__bg');
 var hauteurEnsemble = document.querySelector('.ensemble').offsetHeight;
+var partie2 = document.querySelector('.partie2');
+var partie3 = document.querySelector('.partie3');
 
 // -fonction init
 //-enlever et rajouter la classe actif
@@ -59,8 +61,14 @@ function lancement() {
   var position = actif.offsetLeft;
   bar.style.transform = `translate3d(${position}px, 0, 0)`;
   bar.style.width = `${largeur}px`;
-
+  if((cardsBackground.offsetWidth > 900) || (partie2.offsetWidth > 900) || (partie3.offsetWidth > 900)){
     cardsBackground.style.height = `calc(100vh - ${hauteurHeader}px)`;
+    partie2.style.height = "100vh";
+  }
+  else{
+    cardsBackground.style.height = "auto";
+    partie2.style.height = "1500px";
+  }
 }
 
 var time;

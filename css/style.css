@@ -297,7 +297,7 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 
 .info {
@@ -430,4 +430,26 @@ background-color: #ff9933;
 
 .resultatPartie3 > p {
   font-size: 16px;
+}
+
+
+@media(max-width: 1200px){
+  .menu{
+    font-size: 26px;
+  }
+  .partie2{
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 900px){
+  .cards{
+    flex-direction: column;
+  }
+  .cards__bg{
+    height: auto;
+  }
+  .card{
+    margin-top: 50px;
+  }
 }
